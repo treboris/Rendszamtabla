@@ -1,0 +1,2 @@
+BITMAP ERROR
+https://social.msdn.microsoft.com/Forums/en-US/0120a721-3bcb-47b9-a930-3159fcf05427/error-cs1061-imageltbgrbytegt?forum=csharpgeneral
