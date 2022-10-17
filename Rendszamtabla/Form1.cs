@@ -37,10 +37,13 @@ namespace Rendszamtabla
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if(openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                
                 imgInput = new Image<Bgr, byte>(openFileDialog.FileName);
                 byte[] bytes = imgInput.ToJpegData();
-                Image x = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
-                pictureBox1.Image = x;
+                Image bitmapped = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
+
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = bitmapped;
 
 
 
