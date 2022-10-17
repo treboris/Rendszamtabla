@@ -22,7 +22,7 @@ namespace Rendszamtabla
 
 
         Image<Bgr, byte> imgInput;
-        //Image<Gray, byte> imgGray;
+        Image<Gray, byte> gray_img;
 
 
 
@@ -39,10 +39,12 @@ namespace Rendszamtabla
             {
                 
                 imgInput = new Image<Bgr, byte>(openFileDialog.FileName);
-                byte[] bytes = imgInput.ToJpegData();
+                gray_img = imgInput.Convert<Gray, byte>();
+                byte[] bytes = gray_img.ToJpegData();
                 Image bitmapped = (Bitmap)((new ImageConverter()).ConvertFrom(bytes));
 
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+  
                 pictureBox1.Image = bitmapped;
 
 
